@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bind</title>
+  </head>
+  <body>
+    <script>
+      // Functions -> Special Object
+      // have access to 3 special methods  
+      // Bind, allows you to call a method on a function
+      const person = {
+        firstName: "Ed",
+        lastName: "Devloper",
+        getName() {
+          console.log(this.firstName + this.lastName);
+        },
+      };
+      person.getName();
+
+      function registerUser() {
+        // aditional functionality
+        this.getName();
+      }
+
+      const register = registerUser.bind(person);// use bind to change the value of this keyword to a specific object
+
+      register();
+
+    </script>
+  </body>
+</html>

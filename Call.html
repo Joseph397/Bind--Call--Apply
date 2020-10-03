@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call</title>
+  </head>
+  <body>
+    <script>
+       // Functions -> Special Object
+      // have access to 3 special methods  
+      // Call , 
+      const person = {
+        firstName: "Ed",
+        lastName: "Devloper",
+        getName() {
+          console.log(this.firstName + this.lastName);
+        },
+      };
+      person.getName();
+
+      function registerUser(country, lang) {
+        // aditional functionality
+        this.getName();
+        console.log(`My country is ${country} and my language is ${lang}`);
+      }
+
+      //   bind
+      //   const register = registerUser.bind(person);
+      //   register("Hungary", "en");
+
+      registerUser.call(person, "hungary", "en");
+    </script>
+  </body>
+</html>
